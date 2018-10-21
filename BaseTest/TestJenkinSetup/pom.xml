@@ -6,15 +6,10 @@
     <groupId>TestBaseGroup</groupId>
     <artifactId>BaseTest</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <relativePath>../BaseTest/pom.xml</relativePath>
   </parent>
   <artifactId>TestJenkinSetup</artifactId>
-
   <name>TestJenkinSetup</name>
   <url>http://maven.apache.org</url>
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
-  <dependencies>
-  
-  </dependencies>
+ 
 </project>
