@@ -9,7 +9,7 @@ public class NewTest {
 	WebDriver driver;
 
 	@Test
-	public void f() {
+	public void testSample() {
 
 		System.out.println("Inside the test");
 		System.setProperty("webdriver.gecko.driver",

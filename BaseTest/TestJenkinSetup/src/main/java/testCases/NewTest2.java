@@ -4,12 +4,12 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-public class NewTest {
+public class NewTest2 {
 
 	WebDriver driver;
 
 	@Test
-	public void f() {
+	public void testSample() {
 
 		System.out.println("Inside the test");
 		System.setProperty("webdriver.gecko.driver",
@@ -20,7 +20,7 @@ public class NewTest {
 				options.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
 				options.setAcceptInsecureCerts(true);*/
 		driver = new FirefoxDriver();
-		driver.get("https://www.google.com");
+		driver.get("https://www.yahoo.in");
 	}
 
 	@BeforeTest
