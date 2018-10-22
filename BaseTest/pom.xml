@@ -52,5 +52,6 @@
 
 			<modules>
 						<module>TestJenkinSetup</module>
+						<module>TestParallelSetup</module>
 			</modules>
 </project>
