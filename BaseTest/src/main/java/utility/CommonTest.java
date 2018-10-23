@@ -22,16 +22,15 @@ public class CommonTest {
 
 	@BeforeTest
 	@Parameters(value = {"browser"})
-	public void setupTest(@Optional("chrome") String browser) {
+	public void setupTest(@Optional("firefox") String browser) {
 
 		System.out.println("Inside @BeforeTest of CommonTest class");
 		selectedDriver = DriverFactory.getBrowserName();
 		if (selectedDriver == null) {
-			DriverFactory.setDriver(browser);
-			// driver = DriverFactory.getDriver();
+			// DriverFactory.setDriver(browser);
+			DriverFactory.setDrivers(browser);
 		} else if (!browser.contentEquals(selectedDriver)) {
-			DriverFactory.setDriver(browser);
-			// driver = DriverFactory.getDriver();
+			DriverFactory.setDrivers(browser);
 		}
 	}
 

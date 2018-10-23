@@ -1,4 +1,6 @@
 package utility;
+import java.net.InetAddress;
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -6,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 public class DriverFactory {
 
@@ -14,6 +17,42 @@ public class DriverFactory {
 	private static ThreadLocal<WebDriver>	driver			= new ThreadLocal<>();
 
 	private static ThreadLocal<String>		selectedBrowser	= new ThreadLocal<String>();
+
+	public static synchronized void setDrivers(String browser) {
+
+		try {
+			System.out.println("The adress is " + InetAddress.getLocalHost().toString().trim());
+			if (InetAddress.getLocalHost().toString().trim().contains(ConfigFile.hubIpAdress)) {
+				System.out.println("Setting up driver for Grid");
+				setDriverforGrid(browser);
+			} else {
+				System.out.println("Setting up driver for Local");
+				setDriver(browser);
+			}
+		} catch (Exception e) {
+			System.out.println("Exception Happened in Hub node configuration");
+			e.printStackTrace();
+		}
+	}
+
+	public static synchronized void setDriverforGrid(String browser) {
+
+		try {
+			if (browser.equalsIgnoreCase("firefox")) {
+				driver.set(new RemoteWebDriver(new URL("http://localhost:4445/wd/hub"), optionsManager.getFirefoxOptions()));
+			} else if (browser.equalsIgnoreCase("chrome")) {
+				driver.set(new RemoteWebDriver(new URL("http://localhost:4445/wd/hub"), optionsManager.getChromeOptions()));
+			} else if (browser.equalsIgnoreCase("ie")) {
+				driver.set(new RemoteWebDriver(new URL("http://localhost:4445/wd/hub"), optionsManager.getIEOptions()));
+			} else if (browser.equalsIgnoreCase("edge")) {
+				driver.set(new RemoteWebDriver(new URL("http://localhost:4445/wd/hub"), optionsManager.getEdgeOptions()));
+			}
+		} catch (Exception e) {
+			System.out.println("Exception Happened in Hub node configuration");
+			// e.printStackTrace();
+			setDriver(browser);
+		}
+	}
 
 	public static synchronized void setDriver(String browser) {
 
