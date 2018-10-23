@@ -1,18 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="2" name="Suite" parallel="tests">
+<suite thread-count="4" name="Suite" parallel="tests">
   <test thread-count="5" name="TestFirefox">
    <parameter name="browser" value="firefox"/>
     <classes>
-      <class name="parallel.testcases.TestFunctionalityA"/>
-      <class name="parallel.testcases.TestFunctionalityB"/>
+      <class name="parallel.testcases.TestFunctionalityA"/> 
     </classes>
   </test> <!-- Test -->
   
     <test thread-count="5" name="TestChrome">
      <parameter name="browser" value="chrome"/>
     <classes>
+      <class name="parallel.testcases.TestFunctionalityB"/>
+    </classes>
+  </test> <!-- Test -->
+  
+    <test thread-count="5" name="TestIE">
+     <parameter name="browser" value="ie"/>
+    <classes>
       <class name="parallel.testcases.TestFunctionalityC"/>
+    </classes>
+  </test> <!-- Test -->
+  
+    <test thread-count="5" name="TestEdge">
+     <parameter name="browser" value="edge"/>
+    <classes>
       <class name="parallel.testcases.TestFunctionalityD"/>
     </classes>
   </test> <!-- Test -->

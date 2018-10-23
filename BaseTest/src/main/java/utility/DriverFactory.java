@@ -1,4 +1,6 @@
 package utility;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -20,9 +22,11 @@ public class DriverFactory {
 			System.out.println("Inside firefox setDriver in DriverFactory class ");
 			System.setProperty("webdriver.gecko.driver",
 					ConstantPath.pathGeckoDriver);
-			driver = ThreadLocal.withInitial(() -> new FirefoxDriver(
-					optionsManager.getFirefoxOptions()));
+			// driver = ThreadLocal.withInitial(() -> new FirefoxDriver(
+			// optionsManager.getFirefoxOptions()));
+			driver.set(new FirefoxDriver(optionsManager.getFirefoxOptions()));
 			selectedBrowser.set(browser);
+			setTimeOuts();
 			// For Grid Usage
 			/*try {
 			    tlDriver.set(new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), optionsManager.getFirefoxOptions()));
@@ -34,8 +38,11 @@ public class DriverFactory {
 			System.out.println("Inside chrome setDriver in DriverFactory class");
 			System.setProperty("webdriver.chrome.driver",
 					ConstantPath.pathChromeDriver);
+			/*driver = ThreadLocal.withInitial(() -> new ChromeDriver(
+					optionsManager.getChromeOptions()));*/
 			driver.set(new ChromeDriver(optionsManager.getChromeOptions()));
 			selectedBrowser.set(browser);
+			setTimeOuts();
 			/*//For Grid Usage
 			try {
 			    tlDriver.set(new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), optionsManager.getChromeOptions()));
@@ -46,14 +53,20 @@ public class DriverFactory {
 			System.out.println("Inside ie setDriver in DriverFactory class ");
 			System.setProperty("webdriver.ie.driver",
 					ConstantPath.pathIEDriver);
+			/*driver = ThreadLocal.withInitial(() -> new InternetExplorerDriver(
+					optionsManager.getIEOptions()));*/
 			driver.set(new InternetExplorerDriver(optionsManager.getIEOptions()));
 			selectedBrowser.set(browser);
-		} else if (browser.equals("edge setDriver in DriverFactory class")) {
-			System.out.println("Inside edge ");
+			setTimeOuts();
+		} else if (browser.equals("edge")) {
+			System.out.println("Inside edge setDriver in DriverFactory class ");
 			System.setProperty("webdriver.edge.driver",
 					ConstantPath.pathEdgeDriver);
+			/*driver = ThreadLocal.withInitial(() -> new EdgeDriver(
+					optionsManager.getEdgeOptions()));*/
 			driver.set(new EdgeDriver(optionsManager.getEdgeOptions()));
 			selectedBrowser.set(browser);
+			setTimeOuts();
 		} else {
 			System.out.println("No browser is mentioned ");
 		}
@@ -78,5 +91,12 @@ public class DriverFactory {
 
 		getDriver().quit();
 		selectedBrowser.set(null);
+	}
+
+	public static synchronized void setTimeOuts() {
+
+		getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		getDriver().manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		getDriver().manage().timeouts().setScriptTimeout(10, TimeUnit.SECONDS);
 	}
 }
