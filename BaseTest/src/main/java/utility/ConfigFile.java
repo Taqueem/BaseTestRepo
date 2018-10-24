@@ -14,4 +14,6 @@ public class ConfigFile {
 	public static final String	hubIpAdress		= "Personal/192.168.43.6";
 
 	public static final String	hubUrl			= "http://localhost:4445/wd/hub";
+
+	public static final int		maxRetryCount	= 2;
 }

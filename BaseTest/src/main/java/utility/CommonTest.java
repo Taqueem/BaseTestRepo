@@ -2,6 +2,7 @@ package utility;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
@@ -9,9 +10,9 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 public class CommonTest {
 
-	public static String	selectedDriver;
+	public static String		selectedDriver;
 
-	protected WebDriver		driver;
+	protected static WebDriver	driver;
 
 	@BeforeClass
 	public void beforeClass() {
@@ -46,5 +47,11 @@ public class CommonTest {
 		Capabilities caps = ((RemoteWebDriver) driver).getCapabilities();
 		String browserName = caps.getBrowserName();
 		return browserName;
+	}
+
+	@AfterMethod(alwaysRun = true)
+	public void afterMethod() {
+
+		ExtentReporter.endReporting();
 	}
 }

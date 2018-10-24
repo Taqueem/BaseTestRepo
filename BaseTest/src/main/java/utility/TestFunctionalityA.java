@@ -1,4 +1,4 @@
-package parallel.testcases;
+package utility;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
