@@ -3,6 +3,8 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 
 import org.testng.IAnnotationTransformer;
+import org.testng.ISuite;
+import org.testng.ISuiteListener;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -11,24 +13,24 @@ import org.testng.annotations.ITestAnnotation;
 import utility.ExtentReporter;
 import utility.Operations;
 import utility.RetryFailedTests;
-public class TestListener implements ITestListener, IAnnotationTransformer {
+public class TestListener implements ITestListener, IAnnotationTransformer, ISuiteListener {
 
 	@Override
 	public void onTestStart(ITestResult result) {
 
+		// run before every test method
 		System.out.println("Inside onTestStart");
-		String methodName = result.getTestClass() + "::"
-				+ result.getName().toString();
+		String methodName = result.getName().toString();
 		System.out
 				.println("on test  start listener for the method" + methodName);
-		ExtentReporter.startReporting(methodName);
+		ExtentReporter.startTestMethod(methodName);
 	}
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
 
 		String methodName = result.getName().toString();
-		ExtentReporter.test.pass(methodName);
+		ExtentReporter.childTest.pass(methodName);
 		System.out.println("After test passed listener");
 	}
 
@@ -37,7 +39,7 @@ public class TestListener implements ITestListener, IAnnotationTransformer {
 
 		String methodName = result.getName().toString();
 		Operations.takeScreenShot(methodName);
-		ExtentReporter.test.fail(methodName);
+		ExtentReporter.childTest.fail(methodName);
 		System.out.println("After test Failed listener");
 	}
 
@@ -56,7 +58,7 @@ public class TestListener implements ITestListener, IAnnotationTransformer {
 	@Override
 	public void onStart(ITestContext context) {
 
-		ExtentReporter.initializeExtentReport(context.getStartDate().toString());
+		// ExtentReporter.initializeExtentReport(context.getStartDate().toString());
 		System.out.println("Inside onStart with the context" + context.getName());
 		System.out.println(context.getStartDate().toString());
 		// TODO Auto-generated method stub
@@ -75,5 +77,18 @@ public class TestListener implements ITestListener, IAnnotationTransformer {
 
 		// TODO Auto-generated method stub
 		annotation.setRetryAnalyzer(RetryFailedTests.class);
+	}
+
+	@Override
+	public void onStart(ISuite suite) {
+
+		ExtentReporter.initializeExtentReport(suite.getName());
+		// TODO Auto-generated method stub
+	}
+
+	@Override
+	public void onFinish(ISuite suite) {
+
+		// TODO Auto-generated method stub
 	}
 }

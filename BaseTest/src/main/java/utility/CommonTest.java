@@ -19,6 +19,8 @@ public class CommonTest {
 
 		System.out.println("Inside @BeforeClass with in  CommonTest");
 		driver = DriverFactory.getDriver();
+		System.out.println(this.getClass().getSimpleName());
+		ExtentReporter.startTestClass(this.getClass().getSimpleName());
 	}
 
 	@BeforeTest

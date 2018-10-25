@@ -17,17 +17,20 @@ public class ExtentReporter {
 
 	private static ExtentTestInterruptedException	testexception;
 
-	public static ExtentTest						test;
+	public static ExtentTest						parentTest;
 
-	public static void initializeExtentReport(String time) {
+	public static ExtentTest						childTest;
+
+	public static void initializeExtentReport(String SuiteName) {
 
 		extent = new ExtentReports();
 		/*File file2 = new File(ConstantPath.pathExtentReports + "abcd_" +
 				"extent.html");
 		File file = new File(ConstantPath.pathExtentReports +
 				"extent.html");*/
-		htmlReporter = new ExtentHtmlReporter(ConstantPath.pathExtentReports + new SimpleDateFormat("dd-MM-yyyy hh-mm-ss").format(new Date()) +
-				"_extent.html");
+		htmlReporter = new ExtentHtmlReporter(
+				ConstantPath.pathExtentReports + SuiteName + new SimpleDateFormat("dd-MM-yyyy hh-mm-ss").format(new Date()) +
+						"_extent.html");
 		// htmlReporter.loadXMLConfig(new File(System.getProperty("user.dir") +
 		// "\\Extent-Config.xml"));
 		// make the charts visible on report open
@@ -59,14 +62,23 @@ public class ExtentReporter {
 		System.out.println("inside initialize extent report");
 	}
 
-	public static void startReporting(String methodName) {
+	/*	public static void startReporting(String methodName) {
+	
+			test = extent.createTest(
+					this.getClass().getSimpleName() + "::" + method.getName());
+			childTest = extent.createTest(methodName);
+			System.out
+					.println("inside start reporting for the method" + methodName);
+		}*/
+	public static void startTestMethod(String methodName) {
 
-		/*test = extent.createTest(
-				this.getClass().getSimpleName() + "::" + method.getName());*/
-		test = extent.createTest(methodName);
-		test.assignAuthor("Taqueem Jawed");
-		System.out
-				.println("inside start reporting for the method" + methodName);
+		childTest = parentTest.createNode(methodName);
+	}
+
+	public static void startTestClass(String className) {
+
+		parentTest = extent.createTest(className);
+		parentTest.assignAuthor("Taqueem Jawed");
 	}
 
 	public static void endReporting() {
