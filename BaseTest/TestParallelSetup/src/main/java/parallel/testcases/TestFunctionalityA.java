@@ -1,10 +1,9 @@
 package parallel.testcases;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import utility.CommonTest;
 import utility.ConfigFile;
-@Listeners(listeners.TestListener.class)
+//@Listeners(listeners.TestListener.class)
 public class TestFunctionalityA extends CommonTest {
 
 	@Test

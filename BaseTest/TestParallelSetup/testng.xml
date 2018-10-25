@@ -18,12 +18,12 @@
     </classes>
   </test> <!-- Test -->
   
-    <test thread-count="5" name="TestIE">
+<!--    <test thread-count="5" name="TestIE">
      <parameter name="browser" value="ie"/>
     <classes>
       <class name="parallel.testcases.TestFunctionalityC"/>
     </classes>
-  </test> <!-- Test -->
+  </test> Test  -->
   
     <test thread-count="5" name="TestEdge">
      <parameter name="browser" value="edge"/>

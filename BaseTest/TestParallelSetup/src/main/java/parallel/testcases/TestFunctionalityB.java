@@ -1,4 +1,6 @@
 package parallel.testcases;
+import static org.testng.Assert.assertTrue;
+
 import org.testng.annotations.Test;
 
 import utility.CommonTest;
@@ -19,6 +21,7 @@ public class TestFunctionalityB extends CommonTest {
 		System.out.println("inside testB_two" + "on thread" + Thread.currentThread().getId());
 		System.out.println("Running on the driver: " + getBrowserName());
 		driver.get(ConfigFile.bingUrl);
+		assertTrue(false);
 	}
 
 	@Test
@@ -27,6 +30,7 @@ public class TestFunctionalityB extends CommonTest {
 		System.out.println("inside testB_three" + "on thread" + Thread.currentThread().getId());
 		System.out.println("Running on the driver: " + getBrowserName());
 		driver.get(ConfigFile.bingUrl);
+		assertTrue(false);
 	}
 
 	@Test

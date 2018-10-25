@@ -156,8 +156,10 @@ public class Operations extends CommonTest {
 		// dd.selectByValue(value);
 	}
 
-	public static void takeScreenShot(String methodName) {
+	public static String takeScreenShot(String methodName) {
 
+		String fileLocation = ConstantPath.pathScreenshots + methodName
+				+ ".jpg";
 		try {
 			File scrFile = ((TakesScreenshot) driver)
 					.getScreenshotAs(OutputType.FILE);
@@ -166,11 +168,11 @@ public class Operations extends CommonTest {
 			/*String methodName = Thread.currentThread().getStackTrace()[2]
 					.getMethodName();*/
 			FileUtils.copyFile(scrFile,
-					new File(ConstantPath.pathScreenshots + methodName
-							+ ".jpg"));
+					new File(fileLocation));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		return fileLocation;
 	}
 
 	public static final void dragAndDrop(WebElement source, WebElement target) {

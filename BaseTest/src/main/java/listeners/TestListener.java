@@ -1,4 +1,5 @@
 package listeners;
+import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 
@@ -30,7 +31,7 @@ public class TestListener implements ITestListener, IAnnotationTransformer, ISui
 	public void onTestSuccess(ITestResult result) {
 
 		String methodName = result.getName().toString();
-		ExtentReporter.childTest.pass(methodName);
+		ExtentReporter.methodTest.pass(methodName);
 		System.out.println("After test passed listener");
 	}
 
@@ -38,8 +39,14 @@ public class TestListener implements ITestListener, IAnnotationTransformer, ISui
 	public void onTestFailure(ITestResult result) {
 
 		String methodName = result.getName().toString();
-		Operations.takeScreenShot(methodName);
-		ExtentReporter.childTest.fail(methodName);
+		String imagePath = Operations.takeScreenShot(methodName);
+		ExtentReporter.methodTest.fail(methodName);
+		try {
+			ExtentReporter.methodTest.addScreenCaptureFromPath(imagePath);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		System.out.println("After test Failed listener");
 	}
 
@@ -61,6 +68,7 @@ public class TestListener implements ITestListener, IAnnotationTransformer, ISui
 		// ExtentReporter.initializeExtentReport(context.getStartDate().toString());
 		System.out.println("Inside onStart with the context" + context.getName());
 		System.out.println(context.getStartDate().toString());
+		ExtentReporter.startSuiteTest(context.getName());
 		// TODO Auto-generated method stub
 	}
 

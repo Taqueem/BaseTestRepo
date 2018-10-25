@@ -17,9 +17,11 @@ public class ExtentReporter {
 
 	private static ExtentTestInterruptedException	testexception;
 
-	public static ExtentTest						parentTest;
+	public static ExtentTest						suiteTest;
 
-	public static ExtentTest						childTest;
+	public static ExtentTest						classTest;
+
+	public static ExtentTest						methodTest;
 
 	public static void initializeExtentReport(String SuiteName) {
 
@@ -72,13 +74,23 @@ public class ExtentReporter {
 		}*/
 	public static void startTestMethod(String methodName) {
 
-		childTest = parentTest.createNode(methodName);
+		methodTest = classTest.createNode(methodName);
 	}
 
-	public static void startTestClass(String className) {
-
+	/*public static void startTestClass(String className) {
+	
 		parentTest = extent.createTest(className);
 		parentTest.assignAuthor("Taqueem Jawed");
+	}*/
+	public static void startTestClass(String className) {
+
+		classTest = suiteTest.createNode(className);
+	}
+
+	public static void startSuiteTest(String TestName) {
+
+		suiteTest = extent.createTest(TestName);
+		suiteTest.assignAuthor("Taqueem Jawed");
 	}
 
 	public static void endReporting() {
