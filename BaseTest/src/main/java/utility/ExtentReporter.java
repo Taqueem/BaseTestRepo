@@ -42,7 +42,7 @@ public class ExtentReporter {
 		// automatic screenshot management (pro-only)
 		// htmlReporter.config().setAutoCreateRelativePathMedia(true);
 		// report title
-		htmlReporter.config().setDocumentTitle("aventstack - ExtentReports");
+		htmlReporter.config().setDocumentTitle("Jawed_Test_Report");
 		// encoding, default = UTF-8
 		htmlReporter.config().setEncoding("UTF-8");
 		// protocol (http, https)
@@ -52,9 +52,9 @@ public class ExtentReporter {
 		// chart location - top, bottom
 		htmlReporter.config().setTestViewChartLocation(ChartLocation.BOTTOM);
 		// theme - standard, dark
-		htmlReporter.config().setTheme(Theme.STANDARD);
+		htmlReporter.config().setTheme(Theme.DARK);
 		// set timeStamp format
-		htmlReporter.config().setTimeStampFormat("mm/dd/yyyy hh:mm:ss a");
+		htmlReporter.config().setTimeStampFormat("dd/mm/yyyy hh:mm:ss a");
 		// add custom css
 		htmlReporter.config().setCSS("css-string");
 		// add custom javascript
