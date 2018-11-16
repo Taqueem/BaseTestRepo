@@ -52,7 +52,7 @@ public class ExtentReporter {
 		// chart location - top, bottom
 		htmlReporter.config().setTestViewChartLocation(ChartLocation.BOTTOM);
 		// theme - standard, dark
-		htmlReporter.config().setTheme(Theme.DARK);
+		htmlReporter.config().setTheme(Theme.STANDARD);
 		// set timeStamp format
 		htmlReporter.config().setTimeStampFormat("dd/mm/yyyy hh:mm:ss a");
 		// add custom css

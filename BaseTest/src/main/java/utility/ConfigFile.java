@@ -5,6 +5,8 @@ public class ConfigFile {
 
 	public static final String	googleURL		= "Http://google.com";
 
+	public static final String	googleStoreURL	= "https://store.google.com/";
+
 	public static final String	bingUrl			= "https://www.bing.com/";
 
 	public static final String	varvyUrl		= "https://varvy.com/";

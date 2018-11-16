@@ -1,9 +1,11 @@
 package parallel.testcases;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import googleStorePages.GSHomePage;
 import utility.CommonTest;
 import utility.ConfigFile;
-//@Listeners(listeners.TestListener.class)
+@Listeners(listeners.TestListener.class)
 public class TestFunctionalityA extends CommonTest {
 
 	@Test
@@ -11,7 +13,8 @@ public class TestFunctionalityA extends CommonTest {
 
 		System.out.println("inside testA_One" + " on thread" + Thread.currentThread().getId());
 		System.out.println("Running on the driver: " + getBrowserName());
-		driver.get(ConfigFile.bingUrl);
+		driver.get(ConfigFile.googleStoreURL);
+		GSHomePage.getHomePage().clickOnSearch();
 	}
 
 	@Test

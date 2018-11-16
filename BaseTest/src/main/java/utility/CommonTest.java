@@ -10,9 +10,9 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 public class CommonTest {
 
-	public static String		selectedDriver;
+	public static String	selectedDriver;
 
-	protected static WebDriver	driver;
+	public static WebDriver	driver;
 
 	@BeforeClass
 	public void beforeClass() {
