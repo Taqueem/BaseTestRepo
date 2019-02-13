@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2018-10-24T19:31:24Z" name="Default suite" finished-at="2018-10-24T19:31:39Z" duration-ms="14271">
+    <groups>
+    </groups>
+    <test started-at="2018-10-24T19:31:24Z" name="Default test" finished-at="2018-10-24T19:31:39Z" duration-ms="14271">
+      <class name="utility.TestFunctionalityA">
+        <test-method is-config="true" signature="setupTest(java.lang.String)[pri:0, instance:utility.TestFunctionalityA@41c2284a]" started-at="2018-10-24T19:31:24Z" name="setupTest" finished-at="2018-10-24T19:31:30Z" duration-ms="5238" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupTest -->
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:utility.TestFunctionalityA@41c2284a]" started-at="2018-10-24T19:31:30Z" name="beforeClass" finished-at="2018-10-24T19:31:30Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="testA_One()[pri:0, instance:utility.TestFunctionalityA@41c2284a]" started-at="2018-10-24T19:31:30Z" name="testA_One" finished-at="2018-10-24T19:31:31Z" duration-ms="1643" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testA_One -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:utility.TestFunctionalityA@41c2284a]" started-at="2018-10-24T19:31:31Z" name="afterMethod" finished-at="2018-10-24T19:31:32Z" duration-ms="363" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method signature="testA_four()[pri:0, instance:utility.TestFunctionalityA@41c2284a]" started-at="2018-10-24T19:31:32Z" name="testA_four" finished-at="2018-10-24T19:31:34Z" duration-ms="2140" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testA_four -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:utility.TestFunctionalityA@41c2284a]" started-at="2018-10-24T19:31:34Z" name="afterMethod" finished-at="2018-10-24T19:31:34Z" duration-ms="82" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method signature="testA_three()[pri:0, instance:utility.TestFunctionalityA@41c2284a]" started-at="2018-10-24T19:31:34Z" name="testA_three" finished-at="2018-10-24T19:31:38Z" duration-ms="4038" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testA_three -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:utility.TestFunctionalityA@41c2284a]" started-at="2018-10-24T19:31:38Z" name="afterMethod" finished-at="2018-10-24T19:31:38Z" duration-ms="72" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method signature="testA_two()[pri:0, instance:utility.TestFunctionalityA@41c2284a]" started-at="2018-10-24T19:31:38Z" name="testA_two" finished-at="2018-10-24T19:31:38Z" duration-ms="159" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testA_two -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:utility.TestFunctionalityA@41c2284a]" started-at="2018-10-24T19:31:38Z" name="afterMethod" finished-at="2018-10-24T19:31:38Z" duration-ms="72" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:utility.TestFunctionalityA@41c2284a]" started-at="2018-10-24T19:31:38Z" name="afterTest" finished-at="2018-10-24T19:31:39Z" duration-ms="261" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- utility.TestFunctionalityA -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

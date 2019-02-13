@@ -18,7 +18,6 @@ public class CommonTest {
 	public void beforeClass() {
 
 		System.out.println("Inside @BeforeClass with in  CommonTest");
-		driver = DriverFactory.getDriver();
 		System.out.println(this.getClass().getSimpleName());
 		ExtentReporter.startTestClass(this.getClass().getSimpleName());
 	}
@@ -35,6 +34,7 @@ public class CommonTest {
 		} else if (!browser.contentEquals(selectedDriver)) {
 			DriverFactory.setDrivers(browser);
 		}
+		driver = DriverFactory.getDriver();
 	}
 
 	@AfterTest
