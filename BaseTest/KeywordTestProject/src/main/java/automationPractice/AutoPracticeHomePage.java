@@ -13,7 +13,7 @@ public class AutoPracticeHomePage {
 
 	@FindBy(css = "a.login")
 	@CacheLookup
-	private WebElement signIn;
+	private WebElement linkSignIn;
 
 	/**
 	 * Click on Sign In Link.
@@ -22,7 +22,17 @@ public class AutoPracticeHomePage {
 	 */
 	public AutoPracticeHomePage clickSignInLink() {
 
-		signIn.click();
+		linkSignIn.click();
 		return this;
+	}
+
+	public WebElement getAutoPracticeHomePageElements(String elementName) {
+
+		switch (elementName) {
+			case "linkSignIn" :
+				return linkSignIn;
+			default :
+				return null;
+		}
 	}
 }

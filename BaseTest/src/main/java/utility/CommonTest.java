@@ -24,7 +24,7 @@ public class CommonTest {
 
 	@BeforeTest
 	@Parameters(value = {"browser"})
-	public void setupTest(@Optional("firefox") String browser) {
+	public void setupTest(@Optional("chrome") String browser) {
 
 		System.out.println("Inside @BeforeTest of CommonTest class");
 		selectedDriver = DriverFactory.getBrowserName();

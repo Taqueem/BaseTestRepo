@@ -59,6 +59,7 @@ public class DriverFactory {
 		if (browser.equals("firefox")) {
 			// For Local Usage
 			System.out.println("Inside firefox setDriver in DriverFactory class ");
+			System.out.println("the user directory is" + System.getProperty("user.home"));
 			System.setProperty("webdriver.gecko.driver",
 					ConstantPath.pathGeckoDriver);
 			// driver = ThreadLocal.withInitial(() -> new FirefoxDriver(

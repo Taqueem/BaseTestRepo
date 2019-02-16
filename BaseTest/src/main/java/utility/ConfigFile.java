@@ -1,7 +1,7 @@
 package utility;
 public class ConfigFile {
 
-	public static final String	defaultBrowser	= "firefox";
+	public static final String	defaultBrowser	= "chrome";
 
 	public static final String	googleURL		= "Http://google.com";
 

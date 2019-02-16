@@ -46,4 +46,18 @@ public class AutoPracticeLoginPage {
 		buttonSignIn.click();
 		return this;
 	}
+
+	public WebElement getAutoPracticeLoginPageElements(String elementName) {
+
+		switch (elementName) {
+			case "inputEmail" :
+				return inputEmail;
+			case "inputPassword" :
+				return inputPassword;
+			case "buttonSignIn" :
+				return buttonSignIn;
+			default :
+				return null;
+		}
+	}
 }
