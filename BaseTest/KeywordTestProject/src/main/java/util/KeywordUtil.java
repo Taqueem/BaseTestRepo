@@ -49,6 +49,7 @@ public class KeywordUtil extends CommonTest {
 
 		getapHomePage();
 		getapLoginPage();
+		getapMyAccount();
 	}
 
 	public AutoPracticeHomePage getapHomePage() {
@@ -113,7 +114,7 @@ public class KeywordUtil extends CommonTest {
 		else if (page.equalsIgnoreCase("aphomePage"))
 			return apHomePage.getAutoPracticeHomePageElements(object);
 		else if (page.equalsIgnoreCase("apMyAccount"))
-			return apMyAccount.getAutoPracticeAutoPracticeMyAccountElements(object);
+			return apMyAccount.getAutoPracticeMyAccountElements(object);
 		return null;
 	}
 

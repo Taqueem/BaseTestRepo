@@ -26,7 +26,7 @@ public class AutoPracticeMyAccount {
 		return this;
 	}
 
-	public WebElement getAutoPracticeAutoPracticeMyAccountElements(String elementName) {
+	public WebElement getAutoPracticeMyAccountElements(String elementName) {
 
 		switch (elementName) {
 			case "linkSignOut" :
