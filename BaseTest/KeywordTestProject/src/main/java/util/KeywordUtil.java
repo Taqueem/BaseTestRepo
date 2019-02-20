@@ -31,7 +31,6 @@ public class KeywordUtil extends CommonTest {
 	@BeforeTest
 	public void beforeKeywordTest() {
 
-		System.out.println("inside keyword util" + System.getProperty("user.directory"));
 		setExcelFile();
 		initializePage();
 		// driver.get(ConstantsAP.AUTOPRACTICEURL);

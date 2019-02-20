@@ -46,6 +46,7 @@ public class TestListener implements ITestListener, IAnnotationTransformer, ISui
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			System.out.println("Exception happend while adding the screenshot path");
 		}
 		System.out.println("After test Failed listener");
 	}

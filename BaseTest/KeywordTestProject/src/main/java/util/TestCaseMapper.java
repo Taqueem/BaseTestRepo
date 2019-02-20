@@ -3,7 +3,7 @@ public class TestCaseMapper {
 
 	// public static final String excelPath =
 	// "src\\main\\testData\\ExcelSheets\\DataEngine.xlsx";
-	public static final String	excelPath	= "D:\\Selenium\\GitHub\\BaseTestRepo\\BaseTest\\KeywordTestProject\\src\\main\\testData\\ExcelSheets\\DataEngine.xlsx";
+	public static final String	excelPath	= ".\\src\\main\\testData\\ExcelSheets\\DataEngine.xlsx";
 
 	public static final int		TestCase	= 0;
 
