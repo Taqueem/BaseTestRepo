@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testCases.TestLogin">
+      <class name="testCases.TestAutoPractice">
         <methods>
           <include name="beforeClass"/>
-          <include name="testLogin"/>
           <include name="afterTest"/>
           <include name="setupTest"/>
           <include name="beforeKeywordTest"/>
           <include name="afterMethod"/>
+          <include name="Test2" invocation-numbers="1"/>
         </methods>
-      </class> <!-- testCases.TestLogin -->
+      </class> <!-- testCases.TestAutoPractice -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

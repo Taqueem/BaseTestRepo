@@ -36,9 +36,9 @@ public class ConstantPath {
 
 	public static final String	pathIEDriver		= "D:\\Selenium\\Driver\\IEDriverServer\\IEDriverServer.exe";
 
-	public static final String	pathScreenshots		= "D:\\Selenium\\ScreenShots\\";
+	public static final String	pathScreenshots		= "..\\src\\main\\resources\\ScreenShots\\";
 
-	public static final String	pathExtentReports	= "D:\\Selenium\\ExtentReports\\";
+	public static final String	pathExtentReports	= "..\\src\\main\\resources\\ExtentReports\\";
 	// public static final String pathScreenshots =
 	// "\\BaseTest\\resources\\testReports\\";
 	//
